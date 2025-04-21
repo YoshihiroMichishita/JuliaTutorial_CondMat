@@ -16,7 +16,7 @@
 
 ## 前準備
 Juliaをインストールしましょう。JuliaにはJuliaupという公式のバージョン管理ツールがあります。これ一択です。
-[公式のサイト](https://github.com/JuliaLang/juliaup)より、自身の使っているOSに合わせてインストールしましょう。
+[公式のサイト](https://github.com/JuliaLang/juliaup)より、自身の使っているOSに合わせてインストールしましょう。(導入方法は、[ごまふさんの書いた記事](https://qiita.com/SatoshiTerasaki/items/3c7fcee3a5716b763372)を参考にすると良い。)
 
 公式のコピペになりますが、Windowsの場合CommandLineで以下を実行
 ```
