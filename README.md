@@ -27,8 +27,31 @@ Mac/Linuxの場合、terminal/端末で以下を実行
 ```
 curl -fsSL https://install.julialang.org | sh
 ```
-
-インストールが終わった際に、画面に表示されているpathを通すためのコマンドを実行したらJuliaを動かすための準備完了である。
+**インストールが終わった際に、画面に表示されているpathを通すためのコマンドを実行**したらJuliaを動かすための準備完了である。
 早速terminalに `julia` と打ち込んでみると以下のようにjuliaが起動する
 
+![起動画面](./figure/julia_init.png)
 
+次にライブラリを追加していこう。Juliaではライブラリ間のバージョン管理は自動的に行なってくれる。
+
+上の画面で `]`を押してみよう。するとパッケージモードに移行する(back spaceを押せば通常のモードに戻る。)
+
+![pkg mode](./figure/julia_pkg.png)
+
+このパッケージモードで、今後使うであろうライブラリを複数追加しておこう
+
+```
+add LinearAlgebra Plots CSV DataFrames IJulia
+```
+
+またJupyterNotebookでPlotsを利用するためには、パッケージモードで
+
+```
+build
+```
+
+を実行しておこう。これでjupyter notebookでjuliaが使えるようになっているはずだ。
+
+物性の数値計算でよく使うものは、`LinearAlgebra`(数値計算で必須),`IJulia`(Jupyter Notebookでjuliaを使うのに必要),`Plots`(描画に必要), `DataFrames`,`CSV`(`DataFrames`と合わせて数値計算結果のデータとして保存するのに必要)あたりかと思う。
+他には、機械学習などの研究には`Flux`,`BSON`などを使うし、強相関電子系の研究には`ITensor`(テンソルネットワークを用いた計算に必要),`SparseIR`(松原グリーン関数を用いた数値計算で便利)などを入れておくと良い。
+tutorial3の最後まで読めば、`ITensor`以外全部使います。
